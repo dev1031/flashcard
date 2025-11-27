@@ -1,6 +1,7 @@
 package com.example.flashcard.controllers;
 
 import com.example.flashcard.service.FlashCardService;
+import com.example.flashcard.service.LightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,9 @@ public class JSONPlaceholderController {
 
     @Autowired
     FlashCardService fcs;
+
+    @Autowired
+    private LightService lightService;
 
     @GetMapping("/todos")
     public String getTodos(){
@@ -88,5 +92,11 @@ public class JSONPlaceholderController {
         String url = "https://jsonplaceholder.typicode.com/posts/1";
         restTemplate.delete(url);
         return "Record Deleted..";
+    }
+
+    @GetMapping("/lazy")
+    public void lazyloading(){
+        System.out.println("🚀 Application started");
+        lightService.performTask();
     }
 }
