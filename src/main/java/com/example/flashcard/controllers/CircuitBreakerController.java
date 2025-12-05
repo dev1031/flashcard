@@ -1,11 +1,9 @@
 package com.example.flashcard.controllers;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import org.apache.juli.logging.Log;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
